@@ -7,7 +7,8 @@ import fetchSeasons from '../services/fetchSeasons'
 
 export default function RaceResults({navigation}) {
     
-    const [index, setIndex] = useState(1)
+    // const [index, setIndex] = useState(1)
+    const [title, setTitle] = useState('Temporada')
     const [finished, setFinished] = useState(false)
     const [finalResults, setFinalResults] = useState([])
     const [seasons, setSeasons] = useState(null)
@@ -31,6 +32,7 @@ export default function RaceResults({navigation}) {
     const changeYear = (year) => {
         i = 1
         raceResults = []
+        setTitle(year)
         getResults(year)
     }
     useEffect(() => {
@@ -55,7 +57,7 @@ export default function RaceResults({navigation}) {
         <View>
         {mappedSeasons && 
             <View style={{padding: 30,alignItems:'center'}}>
-            <Button title="Temporada" onPress={()=> pickerRef.current.show()} />
+                <Button color="#841584" title={title} onPress={()=> pickerRef.current.show()} />
                 <ReactNativePickerModule
                     pickerRef={pickerRef}
                     title={"Selecciona el año"}
@@ -63,7 +65,7 @@ export default function RaceResults({navigation}) {
                     selectedColor="#FC0"
                     cancelButtonTextStyle={{ color: "red" }}
                     onValueChange={changeYear}
-                />
+                    />
             </View>
         }
         <FlatList 

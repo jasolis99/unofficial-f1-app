@@ -18,6 +18,7 @@
     "expo-linear-gradient": "^9.2.0",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
+    "react-countdown-hook": "^1.1.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-css-gradient": "^0.4.0",
@@ -29,7 +30,8 @@
     "react-native-screens": "^3.8.0",
     "react-native-svg": "^12.1.1",
     "react-native-tab-view": "^3.1.1",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "reactjs-countdown-hook": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

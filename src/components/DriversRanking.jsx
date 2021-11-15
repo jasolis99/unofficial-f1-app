@@ -14,7 +14,7 @@ export default function DriversRanking({navigation}) {
   const pickerRef = useRef()
   const [ranking, setRanking] = useState(null)
   const [seasons, setSeasons] = useState(null)
-  const [value, setValue] = useState(null)
+  const [title, setTitle] = useState('Temporada')
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function DriversRanking({navigation}) {
   }
   const reFetchSeason  = (value) => {
     setLoading(true)
+    setTitle(value)
     fetchDrivers(value).then(result =>{
       setRanking(mapRanking(result))
     })
@@ -61,7 +62,7 @@ export default function DriversRanking({navigation}) {
     <View style={{flex: 1,backgroundColor: '#13141d'}}>
       {mappedSeasons && 
         <View style={{padding: 30,alignItems:'center'}}>
-          <Button title="Temporada" onPress={()=> pickerRef.current.show()} />
+          <Button title={title} onPress={()=> pickerRef.current.show()} />
             <ReactNativePickerModule
               pickerRef={pickerRef}
               title={"Selecciona el año"}
